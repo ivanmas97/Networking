@@ -13,6 +13,7 @@ class CoursesViewController: UIViewController {
     private var courses = [Course]()
     private var courseName: String?
     private var courseUrl: String?
+    private var url = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewActivityIndicator: UIActivityIndicatorView!
@@ -33,32 +34,12 @@ class CoursesViewController: UIViewController {
     
     func fetchData() {
         
-        //        let jsonUrlSting = "https://swiftbook.ru//wp-content/uploads/api/api_course"
-        let jsonUrlSting = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
-        //        let jsonUrlSting = "https://swiftbook.ru//wp-content/uploads/api/api_website_description"
-        //        let jsonUrlSting = "https://swiftbook.ru//wp-content/uploads/api/api_missing_or_wrong_fields"
-        
-        guard let url = URL(string: jsonUrlSting) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            
-            guard let data = data else { return }
-            
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                self.courses = try decoder.decode([Course].self, from: data)
-                
-                DispatchQueue.main.async {
-                    self.viewActivityIndicator.stopAnimating()
-                    self.tableView.reloadData()
-                }
-                
-            } catch let error {
-                print("Error serialization json", error)
+        NetworkManager.fetchData(url: url) { courses in
+            self.courses = courses
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
-        .resume()
     }
     
     // Cell configuration

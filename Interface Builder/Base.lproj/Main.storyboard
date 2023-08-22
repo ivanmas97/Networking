@@ -1,125 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mxp-fR-hMf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ahk-jn-1pc">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Controlls-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Download an Image" textAlignment="center" lineBreakMode="clip" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B27-MN-kiO">
-                                <rect key="frame" x="30" y="84" width="333" height="684"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Myi-DR-bgp">
-                                <rect key="frame" x="15" y="133" width="363" height="655"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0O-KD-lEI">
-                                        <rect key="frame" x="0.0" y="0.0" width="363" height="126.33333333333333"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Tap to Download an Image">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <buttonConfiguration key="configuration" style="gray" title="Tap to Download an Image">
-                                            <fontDescription key="titleFontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="30"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <segue destination="Q0s-Fe-tu2" kind="show" id="FQi-1R-2fp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axh-7C-ToU">
-                                        <rect key="frame" x="0.0" y="176.33333333333331" width="363" height="126.33333333333331"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Tap to Download an Image">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <buttonConfiguration key="configuration" style="gray" title="GET">
-                                            <fontDescription key="titleFontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="30"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="getRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DXh-tc-xIj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6h-ei-i0h">
-                                        <rect key="frame" x="0.0" y="352.66666666666669" width="363" height="126"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Tap to Download an Image">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <buttonConfiguration key="configuration" style="gray" title="POST">
-                                            <fontDescription key="titleFontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="30"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="postRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A6d-8u-i4Z"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wn-ID-BVD">
-                                        <rect key="frame" x="0.0" y="528.66666666666663" width="363" height="126.33333333333337"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Tap to Download an Image">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <buttonConfiguration key="configuration" style="gray" title="Swiftbook Courses">
-                                            <fontDescription key="titleFontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="30"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <segue destination="TE4-0j-VEp" kind="show" id="mJG-AA-E76"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="B27-MN-kiO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="6uE-wX-Mhd"/>
-                            <constraint firstItem="B27-MN-kiO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="-768" id="9Dl-zi-Zzb"/>
-                            <constraint firstItem="Myi-DR-bgp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="DHe-EB-Wm4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Myi-DR-bgp" secondAttribute="trailing" constant="15" id="H8h-LL-wkz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Myi-DR-bgp" secondAttribute="bottom" constant="30" id="IbW-LS-MhF"/>
-                            <constraint firstItem="B27-MN-kiO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NcB-Dn-7Ze"/>
-                            <constraint firstItem="B27-MN-kiO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PAO-hR-0NI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="B27-MN-kiO" secondAttribute="bottom" constant="50" id="kZb-wp-kE6"/>
-                            <constraint firstItem="Myi-DR-bgp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="nAE-4W-Udj"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="B27-MN-kiO"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="6uE-wX-Mhd"/>
-                                <exclude reference="9Dl-zi-Zzb"/>
-                                <exclude reference="NcB-Dn-7Ze"/>
-                                <exclude reference="PAO-hR-0NI"/>
-                                <exclude reference="kZb-wp-kE6"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" title="Controlls" id="MAc-Ju-Vpb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1060.3053435114502" y="3.5211267605633805"/>
-        </scene>
         <!--Swiftbook Courses-->
         <scene sceneID="g8r-fG-UdB">
             <objects>
@@ -227,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0al-CA-NIw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833" y="317"/>
+            <point key="canvasLocation" x="2759.5419847328244" y="316.90140845070425"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="djS-Ob-qi2">
@@ -269,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jc-sl-j3Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584" y="317"/>
+            <point key="canvasLocation" x="3510.6870229007632" y="316.90140845070425"/>
         </scene>
         <!--Image-->
         <scene sceneID="761-RP-GP5">
@@ -305,25 +194,82 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkp-40-o2C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833" y="-411"/>
+            <point key="canvasLocation" x="2759.5419847328244" y="-411.26760563380282"/>
+        </scene>
+        <!--Contols-->
+        <scene sceneID="hUc-QZ-UeJ">
+            <objects>
+                <collectionViewController id="3sS-UX-B69" customClass="MainCollectionViewController" customModule="Networking" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="P2W-Ub-9NJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="40" minimumInteritemSpacing="40" id="80Y-w8-9Vu">
+                            <size key="itemSize" width="340" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="18y-3V-3o3" customClass="CollectionViewCell" customModule="Networking" customModuleProvider="target">
+                                <rect key="frame" x="26.666666666666668" y="0.0" width="340" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VDT-E1-ctD" customClass="CollectionViewCell" customModule="Networking" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gpu-bE-q3p">
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="28"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="label" destination="Gpu-bE-q3p" id="zhS-Y0-f23"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="3sS-UX-B69" id="dDj-Me-aDK"/>
+                            <outlet property="delegate" destination="3sS-UX-B69" id="Imd-7w-997"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Contols" id="4qr-Lr-4As"/>
+                    <connections>
+                        <segue destination="Q0s-Fe-tu2" kind="show" identifier="ShowImage" id="BEK-KD-VEk"/>
+                        <segue destination="TE4-0j-VEp" kind="show" identifier="ShowCourses" id="W4j-d1-Dr7"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1Q-aQ-61O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1921.3740458015266" y="3.5211267605633805"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="rnY-Pt-WKx">
+        <scene sceneID="b7u-W6-0cT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mxp-fR-hMf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ahk-jn-1pc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kY9-xJ-ktI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ALO-Yu-2TT">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fo9-2D-46I"/>
+                        <segue destination="3sS-UX-B69" kind="relationship" relationship="rootViewController" id="cdw-xD-whI"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eUF-LB-3TX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hph-rf-Cjv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="994.6564885496183" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

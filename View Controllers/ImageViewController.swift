@@ -8,6 +8,8 @@
 import UIKit
 
 class ImageViewController: UIViewController {
+    
+    private let url = "https://i.ibb.co/P52SMkm/i-OS-17-Light-by-i-SWUpdates.png"
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -27,19 +29,11 @@ class ImageViewController: UIViewController {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         
-        guard let url = URL(string: "https://i.ibb.co/P52SMkm/i-OS-17-Light-by-i-SWUpdates.png") else { return }
-        
-        let session = URLSession.shared
-        
-        session.dataTask(with: url) { data, response, error in
-            if let data = data, let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.imageView.image = image
-                }
-            }
+        NetworkManager.downloadImage(url: url) { image in
+            
+            self.activityIndicator.stopAnimating()
+            self.imageView.image = image
         }
-        .resume()
     }
 }
 
