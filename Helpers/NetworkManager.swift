@@ -74,8 +74,7 @@ class NetworkManager {
                     completion(image)
                 }
             }
-        }
-        .resume()
+        } .resume()
     }
     
     static func fetchData(url: String, complition: @escaping (_ courses: [Course]) -> ()) {
@@ -96,7 +95,35 @@ class NetworkManager {
             } catch let error {
                 print("Error serialization json", error)
             }
-        }
-        .resume()
+        } .resume()
+    }
+    
+    static func uploadImage(url: String) {
+        
+        let image = UIImage(named: "Notification")!
+        let httpHeaders = ["Authorization": "Client-ID 1233b78c36f11e2"]
+        guard let imageProperties = ImageProperties(withImage: image, forKey: "image") else { return }
+        
+        guard let url = URL(string: url) else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = httpHeaders
+        request.httpBody = imageProperties.data
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let response = response {
+                print(response)
+            }
+            
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data)
+                    print(json)
+                } catch {
+                    print(error)
+                }
+            }
+        } .resume()
     }
 }
