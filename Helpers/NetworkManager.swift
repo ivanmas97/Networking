@@ -9,6 +9,7 @@ import UIKit
 
 class NetworkManager {
     
+    // Perform a GET request with a given URL
     static func getRequest(url: String) {
         
         guard let url = URL(string: url) else { return }
@@ -33,6 +34,7 @@ class NetworkManager {
         } .resume()
     }
     
+    // Perform a POST request with a given URL and user data
     static func postRequest(url: String) {
         
         guard let url = URL(string: url) else { return }
@@ -62,6 +64,7 @@ class NetworkManager {
         }.resume()
     }
     
+    // Download an image from a given URL and provide it via a completion handler
     static func downloadImage(url: String, completion: @escaping (_ image: UIImage) -> ()) {
         
         guard let url = URL(string: url) else { return }
@@ -77,7 +80,8 @@ class NetworkManager {
         } .resume()
     }
     
-    static func fetchData(url: String, complition: @escaping (_ courses: [Course]) -> ()) {
+    // Fetch data from a given URL and decode it into an array of Course objects
+    static func fetchData(url: String, completion: @escaping (_ courses: [Course]) -> ()) {
         
         guard let url = URL(string: url) else { return }
         
@@ -90,14 +94,15 @@ class NetworkManager {
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 
                 let courses = try decoder.decode([Course].self, from: data)
-                complition(courses)
+                completion(courses)
                 
             } catch let error {
-                print("Error serialization json", error)
+                print("Error serializing JSON", error)
             }
         } .resume()
     }
     
+    // Upload an image to a given URL
     static func uploadImage(url: String) {
         
         let image = UIImage(named: "Notification")!
